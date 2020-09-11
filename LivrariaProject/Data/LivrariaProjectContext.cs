@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LivrariaProject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace LivrariaProject.Data
             : base(options)
         {
         }
+
+        public DbSet<Livro> Livro { get; set; }
+        public DbSet<Autor> Autor { get; set; }
+        public DbSet<Marca> Marca { get; set; }
 
 
     }

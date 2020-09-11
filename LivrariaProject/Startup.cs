@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using LivrariaProject.Data;
+using LivrariaProject.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,10 @@ namespace LivrariaProject
             services.AddDbContext<LivrariaProjectContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("LivrariaProjectContext"), builder =>
                     builder.MigrationsAssembly("LivrariaProject")));
+
+            services.AddScoped<Livro>();
+            services.AddScoped<Autor>();
+            services.AddScoped<Marca>();
         }
 
         
