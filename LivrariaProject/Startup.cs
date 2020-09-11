@@ -34,6 +34,7 @@ namespace LivrariaProject
                 options.UseMySql(Configuration.GetConnectionString("LivrariaProjectContext"), builder =>
                     builder.MigrationsAssembly("LivrariaProject")));
 
+            services.AddScoped<SeedingService>();
             services.AddScoped<Livro>();
             services.AddScoped<Autor>();
             services.AddScoped<Marca>();
@@ -41,7 +42,7 @@ namespace LivrariaProject
 
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SeedingService seedingService)
         {
 
             var enUS = new CultureInfo("en-US");
@@ -56,6 +57,7 @@ namespace LivrariaProject
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {

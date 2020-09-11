@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LivrariaProject.Migrations
@@ -44,12 +43,12 @@ namespace LivrariaProject.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Titulo = table.Column<string>(nullable: true),
                     AutorId = table.Column<int>(nullable: true),
-                    Preco = table.Column<decimal>(nullable: false),
-                    ISBN = table.Column<long>(nullable: false),
+                    Preco = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
+                    ISBN = table.Column<string>(nullable: true),
                     Idioma = table.Column<int>(nullable: false),
                     NumeroPaginas = table.Column<int>(nullable: false),
                     Edicao = table.Column<int>(nullable: false),
-                    AnoEdicao = table.Column<DateTime>(nullable: false),
+                    AnoEdicao = table.Column<string>(nullable: true),
                     MarcaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

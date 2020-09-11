@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LivrariaProject.Migrations
 {
     [DbContext(typeof(LivrariaProjectContext))]
-    [Migration("20200911021844_Initial")]
+    [Migration("20200911195006_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,8 +45,8 @@ namespace LivrariaProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("AnoEdicao")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("AnoEdicao")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int?>("AutorId")
                         .HasColumnType("int");
@@ -54,8 +54,8 @@ namespace LivrariaProject.Migrations
                     b.Property<int>("Edicao")
                         .HasColumnType("int");
 
-                    b.Property<long>("ISBN")
-                        .HasColumnType("bigint");
+                    b.Property<string>("ISBN")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Idioma")
                         .HasColumnType("int");
@@ -67,7 +67,7 @@ namespace LivrariaProject.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<string>("Titulo")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");

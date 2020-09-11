@@ -13,6 +13,10 @@ namespace LivrariaProject.Models.Enums
         AVENTURA,
         CONTO,
         FANTASIA,
-        TERROR
+        TERROR,
+        AUTOAJUDA,
+        ARTES,
+        SUSPENSE,
+        EDUCACAO_FINANCEIRA
     }
 }

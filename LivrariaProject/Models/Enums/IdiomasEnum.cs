@@ -7,9 +7,10 @@ namespace LivrariaProject.Models.Enums
 {
     public enum IdiomasEnum : int
     {
-        PORTUGUES = 0,
-        INGLES = 1,
-        ESPANHOL = 2,
-        ITALIANO = 3
+        PORTUGUES,
+        INGLES,
+        ESPANHOL,
+        ITALIANO,
+        FRANCES
     }
 }

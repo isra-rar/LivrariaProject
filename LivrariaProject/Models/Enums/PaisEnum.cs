@@ -18,7 +18,8 @@ namespace LivrariaProject.Models.Enums
         JAPAO,
         MEXICO,
         PORTUGAL,
-        REINO_UNIDO
+        REINO_UNIDO,
+        INGLATERRA
 
     }
 }
